@@ -1,11 +1,11 @@
 # Visual Effects
 
 * Visual Effects for Unity games
-* Unity minimum version: **2019.3**
+* Unity minimum version: **2020.3**
 * Current version: **0.1.0**
 * License: **MIT**
 * Dependencies:
-	- [com.actioncode.[dependency] : 1.2.3](https://github.com/HyagoOliveira/[dependency]/tree/1.2.3/)
+	- [com.unity.shadergraph : 8.0.0](https://docs.unity3d.com/Packages/com.unity.shadergraph@8.0/manual/index.html)
 
 ## Summary
 

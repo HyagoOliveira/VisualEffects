@@ -30,6 +30,7 @@ namespace ActionCode.VisualEffects
         {
             caster.OnHitChanged -= HandleHitChanged;
             caster.enabled = false;
+            lastHighlightable?.UnHighlight();
         }
 
         private void HandleHitChanged(RaycastHit hit)

@@ -14,31 +14,31 @@ namespace ActionCode.VisualEffects
     [DisallowMultipleComponent]
     public sealed class HighlightableDetector : MonoBehaviour
     {
-        [SerializeField] private AbstractCaster detector;
+        [SerializeField] private AbstractCaster caster;
 
         private IHighlightable lastHighlightable;
 
-        private void Reset() => detector = GetComponent<AbstractCaster>();
+        private void Reset() => caster = GetComponent<AbstractCaster>();
 
         private void OnEnable()
         {
-            detector.enabled = true;
-            detector.OnHitChanged += HandleHitChanged;
+            caster.enabled = true;
+            caster.OnHitChanged += HandleHitChanged;
         }
 
         private void OnDisable()
         {
-            detector.OnHitChanged -= HandleHitChanged;
-            detector.enabled = false;
+            caster.OnHitChanged -= HandleHitChanged;
+            caster.enabled = false;
         }
 
         private void HandleHitChanged(RaycastHit hit)
         {
             lastHighlightable?.UnHighlight();
 
-            if (!detector.HasHit) return;
+            if (!caster.HasHit) return;
 
-            var hasHighlightable = detector.TryGetHittingComponent(out IHighlightable highlightable);
+            var hasHighlightable = caster.TryGetHittingComponent(out IHighlightable highlightable);
             if (!hasHighlightable) return;
 
             highlightable.Highlight();

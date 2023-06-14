@@ -19,8 +19,18 @@ namespace ActionCode.VisualEffects
         private IHighlightable lastHighlightable;
 
         private void Reset() => detector = GetComponent<AbstractCaster>();
-        private void OnEnable() => detector.OnHitChanged += HandleHitChanged;
-        private void OnDisable() => detector.OnHitChanged -= HandleHitChanged;
+
+        private void OnEnable()
+        {
+            detector.enabled = true;
+            detector.OnHitChanged += HandleHitChanged;
+        }
+
+        private void OnDisable()
+        {
+            detector.OnHitChanged -= HandleHitChanged;
+            detector.enabled = false;
+        }
 
         private void HandleHitChanged(RaycastHit hit)
         {

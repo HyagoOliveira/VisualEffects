@@ -6,7 +6,7 @@
 * License: **MIT**
 * Dependencies:
 	- [com.actioncode.physics : 0.2.0](https://github.com/HyagoOliveira/Physics/tree/0.2.0)
-	- [com.unity.shadergraph : 8.0.0](https://docs.unity3d.com/Packages/com.unity.shadergraph@8.0/manual/index.html)
+	- [com.unity.shadergraph : 12.0.0](https://docs.unity3d.com/Packages/com.unity.shadergraph@12.0/changelog/CHANGELOG.html)
 
 ## Summary
 

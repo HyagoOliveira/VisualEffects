@@ -4,18 +4,18 @@ using System.Collections.Generic;
 namespace ActionCode.VisualEffects
 {
     /// <summary>
-    /// Container for <see cref="MaterialHighlighter"/> instances.
+    /// Container for <see cref="LitHighlighter"/> instances.
     /// </summary>
     [DisallowMultipleComponent]
     public sealed class HighlighterContainer : MonoBehaviour, IHighlightable
     {
-        [SerializeField] private MaterialHighlighter[] materials;
+        [SerializeField] private LitHighlighter[] materials;
 
         private bool isHighlighted;
         private List<IHighlightable> highlightables;
 
         private void Reset() =>
-            materials = GetComponentsInChildren<MaterialHighlighter>(includeInactive: true);
+            materials = GetComponentsInChildren<LitHighlighter>(includeInactive: true);
 
         private void Awake() => highlightables = new(materials);
 

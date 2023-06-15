@@ -7,7 +7,7 @@ namespace ActionCode.VisualEffects
     /// </summary>
     [DisallowMultipleComponent]
     [RequireComponent(typeof(Renderer))]
-    public sealed class MaterialHighlighter : MonoBehaviour, IHighlightable
+    public sealed class LitHighlighter : MonoBehaviour, IHighlightable
     {
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         [SerializeField] private Renderer renderer;

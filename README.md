@@ -10,11 +10,27 @@
 
 ## Summary
 
-[...]
+Shaders, interfaces and components used for Visual Effects.
 
 ## How To Use
 
-### Using [...]
+### Lit Highlighter Shader
+
+This shader was created using Shader Graph. 
+You can set the Highlighted Color and Power at runtime using the [LitHighlighter](/Runtime/MaterialControllers/LitHighlighter.cs) component.
+
+![Lit Highlighter Shader](/Docs~/LitHighlighterShader.png "Lit Highlighter Shader")
+
+### Outline Shader
+
+There are two versions for this shader: a Simple Lit and Unlit. All of them were created using HLSL and should be used only in the URP. 
+You can set the Outlined Color and Thickness at runtime using the [Outline](/Runtime/MaterialControllers/Outline.cs) component.
+
+![Outline Shader](/Docs~/OutlineShader.png "Outline Shader")
+
+### Highlightable Detector
+
+Use the [HighlightableDetector](/Runtime/HighlightableDetector.cs) component with [any implementation of a Caster](https://github.com/HyagoOliveira/Physics/tree/main/Runtime/Casters) to automatically highlight components implementing the [IHighlightable](/Runtime/IHighlightable.cs) interface, such as the LitHighlighter or Outline components.
 
 ## Installation
 

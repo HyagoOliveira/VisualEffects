@@ -4,20 +4,21 @@ using System.Collections.Generic;
 namespace ActionCode.VisualEffects
 {
     /// <summary>
-    /// Container for <see cref="LitHighlighter"/> instances.
+    /// Container for <see cref="IHighlightable"/> instances.
     /// </summary>
     [DisallowMultipleComponent]
     public sealed class HighlighterContainer : MonoBehaviour, IHighlightable
     {
-        [SerializeField] private LitHighlighter[] materials;
+        public bool IsHighlighted { get; private set; }
 
-        private bool isHighlighted;
         private List<IHighlightable> highlightables;
 
-        private void Reset() =>
-            materials = GetComponentsInChildren<LitHighlighter>(includeInactive: true);
-
-        private void Awake() => highlightables = new(materials);
+        private void Awake()
+        {
+            var children = GetComponentsInChildren<IHighlightable>(includeInactive: true);
+            highlightables = new(children);
+            highlightables.Remove(this);
+        }
 
         public void Highlight()
         {
@@ -25,7 +26,7 @@ namespace ActionCode.VisualEffects
             {
                 highlightable.Highlight();
             }
-            isHighlighted = true;
+            IsHighlighted = true;
         }
 
         public void UnHighlight()
@@ -34,13 +35,13 @@ namespace ActionCode.VisualEffects
             {
                 highlightable.UnHighlight();
             }
-            isHighlighted = false;
+            IsHighlighted = false;
         }
 
         public void Add(IHighlightable highlightable)
         {
             highlightables.Add(highlightable);
-            if (isHighlighted) highlightable.Highlight();
+            if (IsHighlighted) highlightable.Highlight();
         }
 
         public void Remove(IHighlightable highlightable)

@@ -6,20 +6,15 @@ namespace ActionCode.VisualEffects
     /// Component to Highlight/UnHighlight a material using the Lit Highlighter Shader.
     /// </summary>
     [DisallowMultipleComponent]
-    [RequireComponent(typeof(Renderer))]
-    public sealed class LitHighlighter : MonoBehaviour, IHighlightable
+    public sealed class LitHighlighter : AbstractMaterialController, IHighlightable
     {
-#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
-        [SerializeField] private Renderer renderer;
-#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
-
         /// <summary>
         /// The current Highlight Color.
         /// </summary>
         public Color Color
         {
-            get => renderer.material.GetColor(highlightColorId);
-            set => renderer.material.SetColor(highlightColorId, value);
+            get => Material.GetColor(highlightColorId);
+            set => Material.SetColor(highlightColorId, value);
         }
 
         /// <summary>
@@ -27,17 +22,17 @@ namespace ActionCode.VisualEffects
         /// </summary>
         public float Power
         {
-            get => renderer.material.GetFloat(highlightPowerId);
-            set => renderer.material.SetFloat(highlightPowerId, value);
+            get => Material.GetFloat(highlightPowerId);
+            set => Material.SetFloat(highlightPowerId, value);
         }
 
         public bool IsHighlighted
         {
-            get => renderer.material.GetFloat(highlightId) > 0F;
+            get => Material.GetFloat(highlightId) > 0F;
             set
             {
                 var enabled = value ? 1F : 0F;
-                renderer.material.SetFloat(highlightId, enabled);
+                Material.SetFloat(highlightId, enabled);
             }
         }
 
@@ -45,24 +40,10 @@ namespace ActionCode.VisualEffects
         private static readonly int highlightColorId = Shader.PropertyToID("_HighlightColor");
         private static readonly int highlightPowerId = Shader.PropertyToID("_HighlightPower");
 
-        private void Reset()
-        {
-            renderer = GetComponent<Renderer>();
-            SetupShader();
-        }
-
         public void Highlight() => IsHighlighted = true;
         public void UnHighlight() => IsHighlighted = false;
 
-        private void SetupShader()
-        {
-            const string shaderName = "Shader Graphs/Lit Highlighter";
-            var hasHighlightShader = renderer.sharedMaterial.shader.name.Equals(shaderName);
-
-            if (hasHighlightShader) return;
-
-            var shader = Shader.Find(shaderName);
-            renderer.sharedMaterial.shader = shader;
-        }
+        protected override string[] GetShadersName() =>
+            new string[1] { "Shader Graphs/Lit Highlighter" };
     }
 }

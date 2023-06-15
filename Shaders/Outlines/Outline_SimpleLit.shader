@@ -1,4 +1,4 @@
-// Shader targeted for low end devices. Single Pass Forward Rendering.
+// Outline Simple Lit Shader to be used by the URP.
 Shader "ActionCode/Outline/Simple Lit"
 {
     // Keep properties of StandardSpecular shader for upgrade reasons.

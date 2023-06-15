@@ -16,14 +16,16 @@ Shaders, interfaces and components used for Visual Effects.
 
 ### Lit Highlighter Shader
 
-This shader was created using Shader Graph. 
+This shader was created using Shader Graph. On your Material Inspector window, click on Shader and select Shader Graphs > Lit Highlighter.
+
 You can set the Highlighted Color and Power at runtime using the [LitHighlighter](/Runtime/MaterialControllers/LitHighlighter.cs) component.
 
 ![Lit Highlighter Shader](/Docs~/LitHighlighterShader.png "Lit Highlighter Shader")
 
 ### Outline Shader
 
-There are two versions for this shader: a Simple Lit and Unlit. All of them were created using HLSL and should be used only in the URP. 
+There are two versions for this shader: a Simple Lit and Unlit. All of them were created using HLSL and should be used only in the URP. On your Material Inspector window, click on Shader and select ActionCode > Outline > Simple Lit or Unlit.
+
 You can set the Outlined Color and Thickness at runtime using the [Outline](/Runtime/MaterialControllers/Outline.cs) component.
 
 ![Outline Shader](/Docs~/OutlineShader.png "Outline Shader")

@@ -1,5 +1,5 @@
 // Outline unlit Shader to be used by the URP.
-Shader "ActionCode/Outline_Unlit"
+Shader "ActionCode/Outline/Unlit"
 {
     Properties
     { 

@@ -8,11 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.1.0] - 2022-01-01
 ### Added
-- Simple Lit Outline shader
-- Unlit Outline shader
+- LitHighlighter and Outline component
+- Simple Lit and Unlit Outline shader
 - HighlightableDetector component
 - HighlighterContainer component
-- LitHighlighter component
 - IHighlightable interface
 - Lit Highlighter Shader
 - CHANGELOG

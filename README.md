@@ -2,7 +2,7 @@
 
 * Visual Effects for Unity games
 * Unity minimum version: **2020.3**
-* Current version: **0.1.0**
+* Current version: **1.0.0**
 * License: **MIT**
 * Dependencies:
 	- [com.actioncode.physics : 0.2.0](https://github.com/HyagoOliveira/Physics/tree/0.2.0)

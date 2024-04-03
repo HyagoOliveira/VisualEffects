@@ -36,17 +36,29 @@ Use the [HighlightableDetector](/Runtime/HighlightableDetector.cs) component wit
 
 ### Sprite Scrolling Shader
 
-Add a scrolling speed into your Sprites!
+Add a scrolling into your Sprites!
 
 Create a Material and apply the `ActionCode/2D/Sprite-Unlit-Scrolling` or `ActionCode/2D/Sprite-Lit-Scrolling` Shader on it:
 
 ![Sprite Unlit Scrolling Material](/Docs~/SpriteUnlitScrolling_Material.png "Sprite Unlit Scrolling Material")
 
-Set the Horizontal or/and Vertical speed and use this Material into a Sprite Renderer or any Mesh Renderer. 
+Set the Horizontal or/and Vertical Speed and use this Material into a Sprite Renderer or any Mesh Renderer. 
 
 > It is necessary that your Source Texture **Wrap Mode** is set to **Repeat**.
 
 ![Scrolling Clouds](/Docs~/ScrollingClouds.gif "Scrolling Clouds")
+
+### Sprite Distortion Shader
+
+Add distortion into your Sprites similar to heat!
+
+Create a Material and apply the `Shader Graph/Sprite-Distortion` Shader on it. Play with its properties.
+
+To use it into the entire screen, add a Sprite Renderer using this Material as a child of your Camera:
+
+![Heat Distortion](/Docs~/HeatDistortion.png "Heat Distortion Game Object")
+
+![Volcano Entry](/Docs~/VolcanoEntry.gif "Volcano Entry")
 
 ## Installation
 

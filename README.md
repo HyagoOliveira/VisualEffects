@@ -34,6 +34,18 @@ You can set the Outlined Color and Thickness at runtime using the [Outline](/Run
 
 Use the [HighlightableDetector](/Runtime/HighlightableDetector.cs) component with [any implementation of a Caster](https://github.com/HyagoOliveira/Physics/tree/main/Runtime/Casters) to automatically highlight components implementing the [IHighlightable](/Runtime/IHighlightable.cs) interface, such as the LitHighlighter or Outline components.
 
+### Sprite Scrolling Shader
+
+Add Horizontal or/and Vertical scrolling speed into your Sprites.
+
+Create a Material and apply the `ActionCode/2D/Sprite-Unlit-Scrolling` or `ActionCode/2D/Sprite-Lit-Scrolling` Shader on it:
+
+![Sprite Unlit Scrolling Material](/Docs~/SpriteUnlitScrolling_Material.png "Sprite Unlit Scrolling Material")
+
+Use this Material into a Sprite Renderer or any Mesh Renderer. **Your Sprite Texture should be set with Wrap Mode = Repeat**
+
+![Scrolling Clouds](/Docs~/ScrollingClouds.gif "Scrolling Clouds")
+
 ## Installation
 
 ### Using the Package Registry Server

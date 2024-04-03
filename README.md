@@ -36,13 +36,15 @@ Use the [HighlightableDetector](/Runtime/HighlightableDetector.cs) component wit
 
 ### Sprite Scrolling Shader
 
-Add Horizontal or/and Vertical scrolling speed into your Sprites.
+Add a scrolling speed into your Sprites!
 
 Create a Material and apply the `ActionCode/2D/Sprite-Unlit-Scrolling` or `ActionCode/2D/Sprite-Lit-Scrolling` Shader on it:
 
 ![Sprite Unlit Scrolling Material](/Docs~/SpriteUnlitScrolling_Material.png "Sprite Unlit Scrolling Material")
 
-Use this Material into a Sprite Renderer or any Mesh Renderer. **Your Sprite Texture should be set with Wrap Mode = Repeat**
+Set the Horizontal or/and Vertical speed and use this Material into a Sprite Renderer or any Mesh Renderer. 
+
+> It is necessary that your Source Texture **Wrap Mode** is set to **Repeat**.
 
 ![Scrolling Clouds](/Docs~/ScrollingClouds.gif "Scrolling Clouds")
 

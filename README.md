@@ -60,6 +60,16 @@ To use it into the entire screen, add a Sprite Renderer using this Material as a
 
 ![Volcano Entry](/Docs~/VolcanoEntry.gif "Volcano Entry")
 
+### Sprite Emissive Shader
+
+Add emissive properties into your Sprites!
+
+Create a Material and apply the `Shader Graph/Sprite-Emissive` Shader on it.
+
+![Cyber Space](/Docs~/CyberSpace.gif "Cyber Space")
+
+_The emissive color on the highlighted background is changing using an Animation component_
+
 ## Installation
 
 ### Using the Package Registry Server

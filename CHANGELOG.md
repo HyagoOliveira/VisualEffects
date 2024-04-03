@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- Sprite Emissive Shader
 - Sprite Distortion Shader
 - Sprite Lit/Unlit Scrolling Shaders
 
